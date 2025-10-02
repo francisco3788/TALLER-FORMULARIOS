@@ -16,7 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from asistencia import views as asistencia_views
+from solicitudes import views as solicitudes_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # Asistencia
+    path('asistencia/', asistencia_views.registrar_asistencia, name='asistencia'),
+    path('asistencia/confirmacion/', asistencia_views.confirmacion, name='asistencia_confirmacion'),
+
+    # Solicitudes
+    path('solicitudes/', solicitudes_views.registrar_solicitud, name='solicitud'),
+    path('solicitudes/confirmacion/', solicitudes_views.confirmacion, name='solicitud_confirmacion'),
 ]
+
