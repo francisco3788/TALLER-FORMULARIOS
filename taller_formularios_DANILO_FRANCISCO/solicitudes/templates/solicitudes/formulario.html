@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Solicitudes</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #eef2f7; margin: 0; padding: 0; }
+        .container { width: 55%; margin: 40px auto; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #333; }
+        form { display: flex; flex-direction: column; }
+        label { font-weight: bold; margin-top: 10px; }
+        input, select, textarea { padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; }
+        button { margin-top: 15px; padding: 10px; background: #9f06ad; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #5b86e5; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Formulario de Solicitudes</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Enviar Solicitud</button>
+        </form>
+    </div>
+</body>
+</html>
